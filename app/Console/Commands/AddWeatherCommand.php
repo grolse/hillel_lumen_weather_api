@@ -22,6 +22,7 @@ class AddWeatherCommand extends Command
 
     public function execute(InputInterface $input, OutputInterface $output)
     {
+        $city = $this->ask('City');
         $temperature = $this->ask('Temperature');
         $tempFeeling = $this->ask('Feeling temperature');
         $humidity = $this->ask('Humidity');
@@ -31,6 +32,7 @@ class AddWeatherCommand extends Command
         $precipitation = $this->ask('Precipitation');
 
         $data = [
+            'city' => $city,
             'temperature' => $temperature,
             'temperature_feeling' => $tempFeeling,
             'humidity' => $humidity,
@@ -39,6 +41,7 @@ class AddWeatherCommand extends Command
             'pressure' => $pressure,
             'precipitation' =>$precipitation
         ];
-        dd($data);
+
+        $this->weatherRepository->addWeather($data);
     }
 }

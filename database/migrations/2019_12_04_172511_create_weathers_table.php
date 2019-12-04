@@ -21,8 +21,8 @@ class CreateWeathersTable extends Migration
             $table->integer('humidity')->nullable(false);
             $table->integer('pressure')->nullable(false);
             $table->integer('wind_speed')->nullable(false);;
-            $table->integer('wind_direction');
-            $table->string('precipitation');
+            $table->integer('wind_direction')->nullable();
+            $table->string('precipitation')->nullable();
             $table->timestamps();
         });
     }

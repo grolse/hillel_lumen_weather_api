@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 class Weather extends Model
 {
     protected $fillable = [
+        'city',
         'temperature',
         'temperature_feeling',
         'humidity',
@@ -20,5 +21,11 @@ class Weather extends Model
         'wind_speed',
         'wind_direction',
         'precipitation'
+    ];
+
+    protected $hidden = [
+        'id',
+        'created_at',
+        'updated_at'
     ];
 }
