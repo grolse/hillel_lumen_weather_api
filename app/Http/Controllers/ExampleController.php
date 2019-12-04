@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\WeatherRepository;
+use App\Repositories\WeatherRepositoryInterface;
+
 class ExampleController extends Controller
 {
     /**
@@ -9,9 +12,8 @@ class ExampleController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(WeatherRepositoryInterface $weatherRepository)
     {
-        //
     }
 
     //
